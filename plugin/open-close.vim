@@ -59,6 +59,7 @@ augroup VimStartupSequence
     " If opening vim without a file arg, open startify and NERDTree
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == '' | call ToggleFileTree() | endif
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv(0)) | call ToggleFileTree() | endif
     " Automatically install missing plugins
     autocmd VimEnter *
                 \   if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
