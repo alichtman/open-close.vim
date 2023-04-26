@@ -28,3 +28,9 @@ The `ToggleFileTree()` function is provided by this plugin. It's mapped to `Ctrl
 ```vim
 let g:open_close_dont_remap_toggle_file_tree = 1
 ```
+
+You can use the following line to set Ctrl-N as the hotkey for opening / closing the file browser:
+
+```vim
+nnoremap <C-n> :call ToggleFileTree()<cr>
+```
